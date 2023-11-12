@@ -7,13 +7,18 @@ body {
 }
 
 #main {
-    margin: 40px 0;
+    background: url("../images/blog-img.jpg") no-repeat center center;
+    padding: 40px 0;
+    background-size: cover;
     position: relative;
 }
 
 #main .content {
-    width: 550px;
+    border-radius: 9px;
+    background: white;
+    width: 620px;
     margin: auto;
+    padding: 50px;
 }
 
 #main .content h3 {
