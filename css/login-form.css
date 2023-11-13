@@ -36,7 +36,7 @@ body {
     margin-bottom: 0.4em;
 }
 
-form input[type='email'], input[type='text'], input[type='password'], input[type='tel']{
+textarea, form input[type='email'], input[type='text'], input[type='password'], input[type='tel']{
     box-sizing: border-box;
     border: 2px solid #ddd;
     padding: 0 .75em;
