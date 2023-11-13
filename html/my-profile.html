@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Đăng nhập</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Site Metas -->
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,23 +25,85 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/custom.css">
 
-
     <link rel="stylesheet" href="../css/fontawesome-free-6.4.2-web/css/all.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="../css/login-form.css">
 
+
+    <style>
+        .profile-container {
+            height: 700px;
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Căn trái nội dung trong container */
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        .profile-info {
+            margin-top: 20px;
+            float: right; /* Căn phải */
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, /* Giữ nguyên kiểu cho trường input */
+        textarea { /* Thêm kiểu cho trường textarea */
+            margin-bottom: 10px;
+            width: 100%; /* Đảm bảo chiều rộng là 100% của container */
+        }
+
+        #avatar-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 10px auto;
+            float: left; /* Căn trái */
+        }
+
+        #avatar {
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50px;
+        }
+
+        #change-avatar,
+        #save-button {
+            display: block;
+            margin: 20px 0;
+            padding: 10px 10px;
+            background-color: #669933;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #change-avatar-input {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
+<!-- Start Main Top -->
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
         <div class="container">
             <!-- Start Header Navigation -->
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="../images/logo.png" class="logo" alt=""></a>
@@ -54,16 +114,16 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li >
-                        <a href="#" class="nav-link " data-toggle="dropdown">SHOP</a>
+                    <!--                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>-->
+                    <li class="dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
                             <li><a href="shop.html">Sidebar Shop</a></li>
                             <li><a href="shop-detail.html">Shop Detail</a></li>
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <!--                            <li><a href="my-account.html">My Account</a></li>-->
+                            <!--                            <li><a href="wishlist.html">Wishlist</a></li>-->
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
@@ -86,22 +146,23 @@
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
+        <!-- Start Side Menu -->
         <div class="side">
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
             <li class="cart-box">
                 <ul class="cart-list">
                     <li>
-                        <a href="#" class="photo"><img src="../images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                        <a href="#" class="photo"><img src="../images/img-pro-01.jpg" class="cart-thumb" alt=""/></a>
                         <h6><a href="#">Delica omtantur </a></h6>
                         <p>1x - <span class="price">$80.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="../images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                        <a href="#" class="photo"><img src="../images/img-pro-02.jpg" class="cart-thumb" alt=""/></a>
                         <h6><a href="#">Omnes ocurreret</a></h6>
                         <p>1x - <span class="price">$60.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="../images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                        <a href="#" class="photo"><img src="../images/img-pro-03.jpg" class="cart-thumb" alt=""/></a>
                         <h6><a href="#">Agam facilisis</a></h6>
                         <p>1x - <span class="price">$40.00</span></p>
                     </li>
@@ -117,55 +178,40 @@
     <!-- End Navigation -->
 </header>
 <!-- End Main Top -->
+<main style="background-color: #f5f5f5">
 
-<!-- Start Top Search -->
-<div class="top-search">
-    <div class="container">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+    <div class="profile-container">
+        <h3 style="font-weight: 600">Hồ sơ của tôi</h3>
+        <div class="profile-info">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" id="username" value="ABC123">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" value="abc@example.com">
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" value="0123456789">
+
+            <label for="dob">Ngày sinh:</label>
+            <input type="text" id="dob" value="01/01/1990">
+
+            <label for="address">Địa chỉ:</label>
+            <textarea id="address" rows="4">123 Main Street, City, Country</textarea>
+
+            <label for="company">Tên công ty:</label>
+            <input type="text" id="company" value="Công ty ABC">
+
+            <button id="save-button">Lưu thông tin</button>
         </div>
-    </div>
-</div>
-<!-- End Top Search -->
 
-<!-- Start Top Search -->
-<div class="top-search">
-    <div class="container">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        <div id="avatar-container">
+            <label for="avatar">Hình ảnh:</label>
+            <img id="avatar" src="../images/apple-touch-icon.png" alt="Avatar">
+            <button id="change-avatar">Đổi ảnh</button>
+            <input type="file" id="change-avatar-input" accept="image/*">
         </div>
-    </div>
-</div>
-<!-- End Top Search -->
-
-
-<main id="main">
-    <div class="content">
-        <h3 class="uppercase">Đăng nhập</h3>
-        <form>
-            <div class="mb-3">
-                <label for="email" class="form-label">Tên tài khoản hoặc địa chỉ emai<span
-                        class="required">*</span></label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Mật khẩu<span class="required">*</span></label>
-                <input type="password" class="form-control" id="password">
-            </div>
-            <div class="option">
-                <a href="forgotpassword.html">Quên mật khẩu?</a>
-                <a href="register.html">Chưa có tài khoản? Đăng ký</a>
-            </div>
-            <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
-
-        </form>
     </div>
 </main>
-
 <!-- Start Footer  -->
 <footer>
     <div class="footer-main">
@@ -173,18 +219,20 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
-                        <h3>Business Time</h3>
+                        <h3>Thời gian làm việc</h3>
                         <ul class="list-time">
-                            <li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
+                            <li>Thứ 2 đến thứ 6: 8h đến 5h</li>
+                            <li>Thứ 7 8h đến 11h</li>
+                            <li>Chủ Nhật: <span>Đóng cửa</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
-                        <h3>Newsletter</h3>
+                        <h3>Khách</h3>
                         <form class="newsletter-box">
                             <div class="form-group">
-                                <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                <input class="" type="email" name="Email" placeholder="Email Address*"/>
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <button class="btn hvr-hover" type="submit">Submit</button>
@@ -193,8 +241,8 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
-                        <h3>Social Media</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Phương tiện truyền thông</h3>
+                        <p>Các thông tin thêm về chúng tôi</p>
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
@@ -211,36 +259,40 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-widget">
-                        <h4>About Freshshop</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        <h4>Về trang Freshshop</h4>
+                        <p> Là nơi cung cấp cho bạn về các sản phẩm như trái cây rau củ
+                            nhập khẩu từ rất nhiều quốc gia khác nhau với giá cả phải chăng với đa dạng sản phẩm mang
+                            đến những trải nghiệm mới lạ</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-link">
-                        <h4>Information</h4>
+                        <h4>Thông tin</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Customer Service</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="contact-us.html">Về trang web chúng tôi</a></li>
+                            <!--                                <li><a href="#">Customer Service</a></li>-->
+                            <!--                                <li><a href="#">Our Sitemap</a></li>-->
+                            <!--                                <li><a href="#">Terms &amp; Conditions</a></li>-->
+                            <!--                                <li><a href="#">Privacy Policy</a></li>-->
+                            <!--                                <li><a href="#">Delivery Information</a></li>-->
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-link-contact">
-                        <h4>Contact Us</h4>
+                        <h4>Liên hệ chúng tôi</h4>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street
+                                    Wichita,<br> KS 67213 </p>
                             </li>
                             <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705
+                                    770</a></p>
                             </li>
                             <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a>
+                                </p>
                             </li>
                         </ul>
                     </div>
@@ -251,21 +303,6 @@
 </footer>
 <!-- End Footer  -->
 
-<!-- ALL JS FILES -->
-<script src="../js/jquery-3.2.1.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<!-- ALL PLUGINS -->
-<script src="../js/jquery.superslides.min.js"></script>
-<script src="../js/bootstrap-select.js"></script>
-<script src="../js/inewsticker.js"></script>
-<script src="../js/bootsnav.js"></script>
-<script src="../js/images-loded.min.js"></script>
-<script src="../js/isotope.min.js"></script>
-<script src="../js/owl.carousel.min.js"></script>
-<script src="../js/baguetteBox.min.js"></script>
-<script src="../js/form-validator.min.js"></script>
-<script src="../js/contact-form-script.js"></script>
-<script src="../js/custom.js"></script>
+
 </body>
 </html>
