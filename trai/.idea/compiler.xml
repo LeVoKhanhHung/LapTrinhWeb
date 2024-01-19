@@ -9,8 +9,5 @@
         <module name="trai" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="trai" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
