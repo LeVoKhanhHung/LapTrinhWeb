@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<%@ page contentType="text/html; charset=UTF-8" %>
+<head>
+<meta charset="utf-8">
+<title>Admin Page</title>
+<link rel="icon" href="/img/logo-3.png">
+<link rel="stylesheet" href="/css/invoice.css">
+</head>
+
+<body>
+
+	<!-- Print Button -->
+	<div style="display: flex;">
+		<a th:href="@{/dashboard}" class="print-button">Trở về trang chủ</a> <a
+			href="javascript:window.print()" class="print-button">In hóa đơn</a>
+	</div>
+
+
+	<!-- Invoice -->
+	<div id="invoice">
+
+		<!-- Header -->
+		<div class="row">
+			<div class="col-md-6">
+				<div id="logo">
+					<img src="..." alt="">
+				</div>
+			</div>
+			<div class="col-md-6">
+
+				<p id="details">
+					<strong>Order: </strong><i th:text="'#' + ${order.id}"></i><br>
+					<strong>Issued: </strong><i  th:text="${#dates.format(order.booking_Date, 'dd-MM-yyyy')}"></i><br>
+					Thời hạn 12 tiếng kể từ thời điểm in hóa đơn
+				</p>
+			</div>
+		</div>
+		<!-- Client & Supplier -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Hóa đơn</h2>
+			</div>
+
+			<div class="col-md-6">
+				<strong class="margin-bottom-5">Supplier</strong>
+				<p>
+					FreshShop <br> Khu phố 6 - phường Linh Trung<br>TP.
+					Thủ Đức - TP. Hồ Chí Minh <br>
+				</p>
+			</div>
+
+			<div class="col-md-6">
+				<strong class="margin-bottom-5">Customer</strong>
+				<p>
+					<i th:text="${order.fullname}"></i> <br> <i
+						th:text="'SĐT: ' + ${order.phone}"></i> <br> <i
+						th:text="'Email: ' + ${order.email}"></i> <br>
+				</p>
+			</div>
+		</div>
+		<!-- Invoice -->
+		<div class="row">
+			<div class="col-md-12">
+				<table class="margin-top-20">
+					<tr>
+						<th>Mô tả</th>
+						<th>Số lượng</th>
+						<th>Tổng cộng</th>
+					</tr>
+					<th:block th:each="y: ${listOrder_Item}">
+						<tr>
+							<td th:text="${y.product.product_Name}"></td>
+							<td th:text="${y.count}"></td>
+							<td th:text="${y.product.price} * ${y.count} + ' VNĐ'"></td>
+						</tr>
+					</th:block>
+
+				</table>
+
+				<p>
+					<strong class="margin-bottom-5">Địa chỉ: </strong>
+					<i th:text="${order.address}"></i><br>
+					<strong class="margin-bottom-5">Phương thức thanh toán: </strong>
+					<i th:text="${order.payment_Method}"></i>
+				</p>
+				
+				
+			</div>
+
+			<div class="col-md-4 col-md-offset-8">
+
+				<table id="totals">
+					<tr>
+						<th>Tổng hóa đơn</th>
+						<th><span th:text="${order.total} + ' VNĐ'"></span></th>
+
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+		<!-- Footer -->
+		<div class="row">
+			<div class="col-md-12">
+				<ul id="footer">
+					<li><span>www.example.com</span></li>
+					<li>19130083@st.hcmuaf.edu.vn</li>
+					<li>0343 464 374</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
