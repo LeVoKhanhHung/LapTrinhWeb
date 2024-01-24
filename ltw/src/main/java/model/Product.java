@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class Product {
+public class Product implements Serializable{
     private int id;
     private String productName;
     private String productDescription;
@@ -11,7 +12,7 @@ public class Product {
 
     private int quantity;
     private int idCategory;
-    private List<String> supplierCategory;
+    private String supplierName;
     private int isActive;
     private Timestamp saleDate;
     private int idRating;
@@ -23,14 +24,14 @@ public Product(){
 
 }
 
-    public Product(int id, String productName, String productDescription, int price, int quantity, int idCategory, List<String> supplierCategory, int isActive, Timestamp saleDate, int idRating, int salePrice, int salePercent) {
+    public Product(int id, String productName, String productDescription, int price, int quantity, int idCategory, String supplierName, int isActive, Timestamp saleDate, int idRating, int salePrice, int salePercent) {
         this.id = id;
         this.productName = productName;
         this.productDescription = productDescription;
         this.price = price;
         this.quantity = quantity;
         this.idCategory = idCategory;
-        this.supplierCategory = supplierCategory;
+        this.supplierName = supplierName;
         this.isActive = isActive;
         this.saleDate = saleDate;
         this.idRating = idRating;
@@ -86,12 +87,12 @@ public Product(){
         this.idCategory = idCategory;
     }
 
-    public List<String> getSupplierCategory() {
-        return supplierCategory;
+    public String getSupplierName() {
+        return supplierName;
     }
 
-    public void setSupplierCategory(List<String> supplierCategory) {
-        this.supplierCategory = supplierCategory;
+    public void setsupplierName(String supplierName) {
+        this.supplierName = supplierName;
     }
 
     public int getIsActive() {
@@ -132,5 +133,23 @@ public Product(){
 
     public void setSalePercent(int salePercent) {
         this.salePercent = salePercent;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", idCategory=" + idCategory +
+                ", supplierName='" + supplierName + '\'' +
+                ", isActive=" + isActive +
+                ", saleDate=" + saleDate +
+                ", idRating=" + idRating +
+                ", salePrice=" + salePrice +
+                ", salePercent=" + salePercent +
+                "}\n";
     }
 }
