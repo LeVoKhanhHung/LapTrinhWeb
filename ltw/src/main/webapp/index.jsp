@@ -1,4 +1,7 @@
-
+<%@ page import="model.User" %>
+<%
+    User user = (User) session.getAttribute("auth");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -138,9 +141,15 @@
                     </a></li>
                 </ul>
             </div>
+            <%--            login--%>
             <div class="login-box" style="font-weight: 700; font-size: 16px; text-transform: uppercase;">
                 <div id=" basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                    <a href="login.html">Đăng nhập</a><i class="fa-solid fa-right-to-bracket"></i>
+                    <%if (user == null) {%>
+
+                    <a href="login.jsp">Đăng nhập</a>
+                    <% } else { %>
+                    <%= user.getFullname()%>
+                    <% } %>
                 </div>
             </div>
 
