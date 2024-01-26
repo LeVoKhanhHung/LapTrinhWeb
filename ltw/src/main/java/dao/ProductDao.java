@@ -5,15 +5,38 @@ import model.Product;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
 public class ProductDao {
+    private static ProductDao instance;
     private static final Connection connection = null;
 
     public ProductDao() {
         // Không cần thiết lập kết nối ở đây, sử dụng getConnection khi cần
     }
+//    public static ProductDao getInstance(){
+//        if (instance == null) {
+//            instance = new ProductDao();
+//        }
+//        return instance;
+//    }
+//    public String getNameProduct() throws SQLException {
+//        Connection connection = JDBiConnector.getInstance().getConnection();
+//        PreparedStatement preparedStatement;
+//        String name="";
+//        try {
+//            preparedStatement = connection.prepareStatement("SELECT products.productName FROM products WHERE id =1 ");
+//            ResultSet rs = preparedStatement.executeQuery();
+//            while (rs.next()){
+//                name = rs.getString(1);
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return name;
+//    }
 
 
 
