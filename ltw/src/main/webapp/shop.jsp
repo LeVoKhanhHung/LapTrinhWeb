@@ -1,5 +1,6 @@
 <%@ page import="model.Product" %>
 <%@ page import="java.util.List" %>
+<%@ page import="model.Cart" %>
 <%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--<% page contentType="text/html;charset=UTF-8"language ="java"%>--%>
@@ -145,7 +146,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="shop.html">Sản phẩm</a></li>
                             <li><a href="shop-detail.html">Shop Detail</a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="cart.jsp">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <!--                                <li><a href="my-account.html">My Account</a></li>-->
                             <!--                                <li><a href="wishlist.html">Wishlist</a></li>-->
@@ -159,11 +160,14 @@
 
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
+                <% Cart cart = (Cart) session.getAttribute("cart");
+                if (cart ==null) cart=new Cart();
+                %>
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu"><a href="#">
                         <i class="fa fa-shopping-bag"></i>
-                        <span class="badge">3</span>
+                        <span class="badge"><%=cart.getTolal()%> </span>
                         <p>Giỏ hàng của tôi</p>
                     </a></li>
                 </ul>
@@ -295,7 +299,7 @@
 <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
 <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
                                                         </ul>
-                                                        <a class="cart" href="cart.html">Thêm vào giỏ hàng</a>
+                                                        <a class="cart" href="add-cart?id=<%=p.getId()%>">Thêm vào giỏ hàng</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
