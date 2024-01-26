@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class JDBiConnector {
-    private static final JDBiConnector instance = new JDBiConnector();
+    private static JDBiConnector instance = new JDBiConnector();
 
     private Jdbi jdbi;
     public static JDBiConnector me(){
@@ -20,6 +20,15 @@ public class JDBiConnector {
     public static PreparedStatement preparedStatement(String query) {
         return null;
     }
+
+//    public static DatabaseMetaData getInstance() {
+//        return (DatabaseMetaData) instance;
+//    }
+//
+//    public static void setInstance(DatabaseMetaData instance) {
+//        JDBiConnector.instance =  (JDBiConnector) instance;
+//    }
+
 
 //    public static PreparedStatement preparedStatement(String query) {
 //        return null;
@@ -50,7 +59,7 @@ public class JDBiConnector {
 
     public static void main(String[] args) {
         String query = null;
-        List<Product> products = JDBiConnector.me().get().withHandle(handle -> {
+        List<Product> products = me().get().withHandle(handle -> {
             return handle.createQuery("select *from products ").mapToBean(Product.class).collect(Collectors.toList());
         });
         System.out.println(products);

@@ -24,6 +24,12 @@ public class ProductService {
             return handle.createQuery("select *from products ").mapToBean(Product.class).collect(Collectors.toList());
         });
     }
+//    public static List<Product> getimg(){
+//
+//        return JDBiConnector.me().get().withHandle(handle -> {
+//            return handle.createQuery("select supplierName from products ").mapToBean(Product.class).collect(Collectors.toList());
+//        });
+//    }
 
    }
 //        Connection connection = ConnectDB.getInstance().getConnection();
