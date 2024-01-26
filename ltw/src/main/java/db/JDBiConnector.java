@@ -2,6 +2,7 @@ package db;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import model.Product;
+import model.User;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.*;
@@ -58,11 +59,17 @@ public class JDBiConnector {
     }
 
     public static void main(String[] args) {
+//        String query = null;
+//        List<Product> products = me().get().withHandle(handle -> {
+//            return handle.createQuery("select *from products ").mapToBean(Product.class).collect(Collectors.toList());
+//        });
+//        System.out.println(products);
+//    }
         String query = null;
-        List<Product> products = me().get().withHandle(handle -> {
-            return handle.createQuery("select *from products ").mapToBean(Product.class).collect(Collectors.toList());
+        List<User> users = me().get().withHandle(handle -> {
+            return handle.createQuery("select *from users ").mapToBean(User.class).collect(Collectors.toList());
         });
-        System.out.println(products);
+        System.out.println(users);
     }
 
 

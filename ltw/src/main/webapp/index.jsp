@@ -148,7 +148,7 @@
 
                     <a href="login.jsp">Đăng nhập</a>
                     <% } else { %>
-                    <%= user.getFullname()%>
+                    <%= user.getUsername()%>
                     <% } %>
                 </div>
             </div>
