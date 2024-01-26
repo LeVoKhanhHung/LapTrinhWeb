@@ -4,20 +4,23 @@ package service;
 import db.JDBiConnector;
 import model.Product;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ProductService {
 
 
+    public static Product getById(int proId){
+
+        return JDBiConnector.me().get().withHandle(handle -> {
+            return handle.createQuery("select *from products  where id = :id").bind("id",proId).mapToBean(Product.class).stream().findFirst().get();
+        });
+    }
+
+
     public static List<Product> getAll(){
-       return JDBiConnector.me().get().withHandle(handle -> {
+
+        return JDBiConnector.me().get().withHandle(handle -> {
             return handle.createQuery("select *from products ").mapToBean(Product.class).collect(Collectors.toList());
         });
     }

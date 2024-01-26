@@ -4,7 +4,7 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 import model.Product;
 import org.jdbi.v3.core.Jdbi;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +16,16 @@ public class JDBiConnector {
         return instance;
     }
     private JDBiConnector(){}
+
+    public static PreparedStatement preparedStatement(String query) {
+        return null;
+    }
+
+//    public static PreparedStatement preparedStatement(String query) {
+//        return null;
+//    }
+
+
 
     public Jdbi get(){
         if (jdbi==null ) connect();
@@ -39,9 +49,12 @@ public class JDBiConnector {
     }
 
     public static void main(String[] args) {
+        String query = null;
         List<Product> products = JDBiConnector.me().get().withHandle(handle -> {
             return handle.createQuery("select *from products ").mapToBean(Product.class).collect(Collectors.toList());
         });
         System.out.println(products);
     }
+
+
 }
