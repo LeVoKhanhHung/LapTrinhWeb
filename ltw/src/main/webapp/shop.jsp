@@ -278,21 +278,29 @@
 
                             <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                 <div id="productList">
-                                    <div  class="row ">
+<%--                                    <% List<Product> data = (List<Product>)  request.getAttribute("data");--%>
+<%--                                        for (Product p:data){--%>
+<%--                                    %>--%>
+                                    <div
+                                            class="row ">
 
 
-                                        <% List<Product> data = (List<Product>)  request.getAttribute("data");
-                                        for (Product p:data){
-                                        %>
+<%--                                        <% List<Product> data = (List<Product>)  request.getAttribute("data");--%>
+<%--                                        for (Product p:data){--%>
+<%--                                        %>--%>
 
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                            <% List<Product> data = (List<Product>)  request.getAttribute("data");
+                                                for (Product p:data){
+                                            %>
                                             <div class="products-single fix" >
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
                                                         <p class="sale">Giảm giá</p>
                                                     </div>
                                                     <br>
-                                                    <img src="<% p.getSupplierName(); %>" class="img-fluid" alt="Image" >
+                                                    <img src="<%=p.getSupplierName()%>" class="img-fluid" alt="Image" >
+                                                    
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="shop-detail.html" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -303,58 +311,59 @@
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4><% p.getProductName();%></h4>
-                                                    <h5> <%p.getPrice();%></h5>
+                                                    <h4><%=p.getProductName()%></h4>
+                                                    <h5> <%=p.getPrice()%></h5>
                                                 </div>
                                             </div>
+                                            <%}%>
                                         </div>
 
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix" >
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Giảm giá</p>
-                                                    </div>
-                                                    <br>
-                                                    <img src="images/kiwwi.jpg" class="img-fluid" alt="Image" >
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="shop-detail.html" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
-                                                        </ul>
-                                                        <a class="cart" href="cart.html">Thêm vào giỏ hàng</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Kiwi <br> giá tốt</h4>
-                                                    <h5> 200.000đ</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix" >
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Giảm giá</p>
-                                                    </div>
-                                                    <br>
-                                                    <img src="images/nhomaudon.jpg" class="img-fluid" alt="Image" >
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="shop-detail.html" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->
-                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->
-                                                        </ul>
-                                                        <a class="cart" href="cart.html">Thêm vào giỏ hàng</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Nho Nhật<br> giá tốt</h4>
-                                                    <h5> 11.000.000đ</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+<%--                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">--%>
+<%--                                            <div class="products-single fix" >--%>
+<%--                                                <div class="box-img-hover">--%>
+<%--                                                    <div class="type-lb">--%>
+<%--                                                        <p class="sale">Giảm giá</p>--%>
+<%--                                                    </div>--%>
+<%--                                                    <br>--%>
+<%--                                                    <img src="images/kiwwi.jpg" class="img-fluid" alt="Image" >--%>
+<%--                                                    <div class="mask-icon">--%>
+<%--                                                        <ul>--%>
+<%--                                                            <li><a href="shop-detail.html" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>--%>
+<%--                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->--%>
+<%--                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->--%>
+<%--                                                        </ul>--%>
+<%--                                                        <a class="cart" href="cart.html">Thêm vào giỏ hàng</a>--%>
+<%--                                                    </div>--%>
+<%--                                                </div>--%>
+<%--                                                <div class="why-text">--%>
+<%--                                                    <h4>Kiwi <br> giá tốt</h4>--%>
+<%--                                                    <h5> 200.000đ</h5>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">--%>
+<%--                                            <div class="products-single fix" >--%>
+<%--                                                <div class="box-img-hover">--%>
+<%--                                                    <div class="type-lb">--%>
+<%--                                                        <p class="sale">Giảm giá</p>--%>
+<%--                                                    </div>--%>
+<%--                                                    <br>--%>
+<%--                                                    <img src="images/nhomaudon.jpg" class="img-fluid" alt="Image" >--%>
+<%--                                                    <div class="mask-icon">--%>
+<%--                                                        <ul>--%>
+<%--                                                            <li><a href="shop-detail.html" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>--%>
+<%--                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>-->--%>
+<%--                                                            <!--                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>-->--%>
+<%--                                                        </ul>--%>
+<%--                                                        <a class="cart" href="cart.html">Thêm vào giỏ hàng</a>--%>
+<%--                                                    </div>--%>
+<%--                                                </div>--%>
+<%--                                                <div class="why-text">--%>
+<%--                                                    <h4>Nho Nhật<br> giá tốt</h4>--%>
+<%--                                                    <h5> 11.000.000đ</h5>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
 
 <%--                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">--%>
 <%--                                            <div class="products-single fix" >--%>
@@ -1249,7 +1258,7 @@
 
 
                                 </div>
-                                <%}%>
+<%--                                <%}%>--%>
                                 <div  class="row ">
                                     <div id="phantrang">
                                         <nav aria-label="Page navigation example">
