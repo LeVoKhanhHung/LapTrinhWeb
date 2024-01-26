@@ -155,9 +155,9 @@
         <h3 class="uppercase">Đăng nhập</h3>
         <form action="./login" method="post">
             <div class="mb-3">
-                <label for="email" class="form-label">Tên tài khoản hoặc địa chỉ emai<span
+                <label for="email" class="form-label">Tên tài khoản<span
                         class="required">*</span></label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="text" class="form-control" id="email" name="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Mật khẩu<span class="required">*</span></label>
@@ -265,20 +265,20 @@
 <!-- End Footer  -->
 
 <!-- ALL JS FILES -->
-<script src="../js/jquery-3.2.1.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <!-- ALL PLUGINS -->
-<script src="../js/jquery.superslides.min.js"></script>
-<script src="../js/bootstrap-select.js"></script>
-<script src="../js/inewsticker.js"></script>
-<script src="../js/bootsnav.js"></script>
-<script src="../js/images-loded.min.js"></script>
-<script src="../js/isotope.min.js"></script>
-<script src="../js/owl.carousel.min.js"></script>
-<script src="../js/baguetteBox.min.js"></script>
-<script src="../js/form-validator.min.js"></script>
-<script src="../js/contact-form-script.js"></script>
-<script src="../js/custom.js"></script>
+<script src="./js/jquery.superslides.min.js"></script>
+<script src="./js/bootstrap-select.js"></script>
+<script src="./js/inewsticker.js"></script>
+<script src="./js/bootsnav.js"></script>
+<script src="./js/images-loded.min.js"></script>
+<script src="./js/isotope.min.js"></script>
+<script src="./js/owl.carousel.min.js"></script>
+<script src="./js/baguetteBox.min.js"></script>
+<script src="./js/form-validator.min.js"></script>
+<script src="./js/contact-form-script.js"></script>
+<script src="./js/custom.js"></script>
 </body>
 </html>
