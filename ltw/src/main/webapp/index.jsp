@@ -109,7 +109,7 @@
                     <li class="dropdown active">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Sản phẩm</a>
                         <ul class="dropdown-menu">
-                            <li><a href="shop.jsp">Sản phẩm</a></li>
+                            <li><a href="product-List">Sản phẩm</a></li>
                             <li><a href="shop-detail.jsp">Shop Detail</a></li>
                             <li><a href="cart.jsp">Cart</a></li>
                             <!--                            <li><a href="checkout.html">Checkout</a></li>-->
@@ -118,7 +118,8 @@
                         </ul>
                     </li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng
+                        tôi</a></li>
                 </ul>
 
             </div>
@@ -139,22 +140,17 @@
             <div class="login-box" style="font-weight: 700; font-size: 16px; text-transform: uppercase;">
                 <div id=" basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
                     <%if (user == null) {%>
-
                     <a href="./login.jsp">Đăng nhập</a>
                     <% } else { %>
-                    <div> <%= user.getUsername()%></div>
+                    <div><%= user.getUsername()%>
+                    </div>
                     <div style="font-weight: normal; font-size: small"><a href="logout">Đăng xuất</a></div>
                     <% } %>
                 </div>
             </div>
 
-            <div class="login-box" style="font-weight: 700; font-size: 16px; text-transform: uppercase;">
-                <div class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                    <a href="./register.jsp">Đăng kí</a>
-                </div>
-                </div>
 
-                <!-- End Atribute Navigation -->
+            <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
         <!-- End Side Menu -->

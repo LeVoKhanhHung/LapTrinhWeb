@@ -45,6 +45,17 @@
     <script src="js/Shopfunction.js"></script>
     <![endif]-->
 
+
+    <style>
+
+
+        element.style {
+            height: 300px;
+            width: 900%;
+            display: block;
+        }
+
+    </style>
 <!--    <style>-->
 <!--        #productList {-->
 <!--            list-style-type: none;-->
@@ -161,11 +172,14 @@
 
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
+                <% Cart cart = (Cart) session.getAttribute("cart");
+                    if (cart ==null) cart=new Cart();
+                %>
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu"><a href="#">
                         <i class="fa fa-shopping-bag"></i>
-                        <span class="badge">3</span>
+                        <span class="badge"><%=cart.getTolal()%> </span>
                         <p>Giỏ hàng của tôi</p>
                     </a></li>
                 </ul>
@@ -180,12 +194,6 @@
                     <div> <%= user.getUsername()%></div>
                     <div style="font-weight: normal; font-size: small"><a href="logout">Đăng xuất</a></div>
                     <% } %>
-                </div>
-            </div>
-
-            <div class="login-box" style="font-weight: 700; font-size: 16px; text-transform: uppercase;">
-                <div class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                    <a href="./register.jsp">Đăng kí</a>
                 </div>
             </div>
 
@@ -272,11 +280,11 @@
 <%--                                        for (Product p:data){--%>
 <%--                                        %>--%>
 
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" style="    display: -webkit-inline-box;">
                                             <% List<Product> data = (List<Product>)  request.getAttribute("data");
                                                 for (Product p:data){
                                             %>
-                                            <div class="products-single fix" >
+                                            <div class="products-single fix" style="    padding: 13px">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
                                                         <p class="sale">Giảm giá</p>
