@@ -11,14 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LoginController", value = "/login")
+@WebServlet(name = "Login", value = "/login")
 public class LoginController extends HttpServlet {
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
-    }
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -26,7 +21,7 @@ public class LoginController extends HttpServlet {
 
         if (user != null && user.getId() > 0 && user.getActive() > 0) {
             HttpSession session = req.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute("auth", user);
 
             resp.sendRedirect("./");
         } else {

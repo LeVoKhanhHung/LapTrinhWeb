@@ -67,7 +67,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.jsp">Trang chủ</a></li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="about.html">Về Tr</a></li>-->
                     <li>
                         <a href="#" class="nav-link " data-toggle="dropdown">Sản phẩm</a>
@@ -180,11 +180,11 @@
             <div class="mb-3">
                 <label for="email" class="form-label">Tên tài khoản<span
                         class="required">*</span></label>
-                <input type="text" class="form-control" id="email" name="email">
+                <input type="text" class="form-control" id="email" name="username">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Mật khẩu<span class="required">*</span></label>
-                <input type="password" class="form-control" id="password" name="pass">
+                <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="option">
                 <a href="forgotpassword.html">Quên mật khẩu?</a>

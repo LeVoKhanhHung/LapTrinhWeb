@@ -8,12 +8,11 @@ public class User {
     private String phone;
     private String role;
     private int active;
-    private int status;
     public User() {
     }
 
 
-    public User(int id,String username, String password, String email, String phone, String role, int active, int status) {
+    public User(int id,String username, String password, String email, String phone, String role, int active) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -21,17 +20,15 @@ public class User {
         this.phone = phone;
         this.role = role;
         this.active = active;
-        this.status = status;
     }
 
-    public User(int id, String username, String email, String phone, String role, int active, int status) {
+    public User(int id, String username, String email, String phone, String role, int active) {
         this.id = id;
         this.active = active;
         this.username = username;
         this.email = email;
         this.phone = phone;
         this.role = role;
-        this.status = status;
 
     }
     public int getId() {
@@ -90,12 +87,17 @@ public class User {
     public void setActive(int active) {
         this.active = active;
     }
-    public int getStatus() {
-        return status;
-    }
 
-    public void setStatus(int status) {
-        this.status = status;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", role='" + role + '\'' +
+                ", active=" + active +
+                '}';
     }
-
 }
