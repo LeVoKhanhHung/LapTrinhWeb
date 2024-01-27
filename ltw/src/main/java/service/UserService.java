@@ -25,20 +25,6 @@ public class UserService {
         return instance;
     }
 
-//    public User checkLogin(String username, String password) {
-//        List<User> users = JDBiConnector.me().get().withHandle(handle -> {
-//            return handle.createQuery("select * from users where username=?")
-//                    .bind(0, username)
-//                    .mapToBean(User.class).collect(Collectors.toList());
-//        });
-//        if (users.size() != 1) return null;
-//        User u = users.get(0);
-//        if (username.equals(u.getUsername()) && password.equals(u.getPassword())) {
-//            return u;
-//        }
-//        return null;
-//    }
-
     public User checkLogin(String username, String password) {
         Connection connection = ConnectDB.getInstance().getConnection();
         PreparedStatement preparedStatement;
@@ -47,9 +33,7 @@ public class UserService {
             preparedStatement.setString(1, username);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                if (rs.getInt("status") == 1) {
-                    return new User();
-                }
+
                 if (!hashPassword(password).equals(rs.getString("password"))) {
                     return null;
                 }
@@ -67,7 +51,6 @@ public class UserService {
             return null;
         }
     }
-
 
     public boolean register(String username, String password, String confirmPassword, String email, String phone, String hashcode) {
         if (password.equals(confirmPassword)) {
@@ -141,4 +124,5 @@ public class UserService {
             return null;
         }
     }
+
 }

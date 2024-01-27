@@ -149,7 +149,7 @@
                     <a href="./login.jsp">Đăng nhập</a>
                     <% } else { %>
                     <div> <%= user.getUsername()%></div>
-                    <div><a href="logout">Đăng xuất</a></div>
+                    <div style="font-weight: normal; font-size: small"><a href="logout">Đăng xuất</a></div>
                     <% } %>
                 </div>
             </div>
