@@ -1,11 +1,12 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     String error = (String) request.getAttribute("error");
 %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Đăng nhập</title>
+    <title>Đăng ký</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -13,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
+
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,15 +32,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/custom.css">
 
-
     <link rel="stylesheet" href="./css/fontawesome-free-6.4.2-web/css/all.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="./css/login-form.css">
-
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"
+            type="text/javascript"></script>
     <style>
         label.error {
             display: inline-block;
@@ -48,6 +47,7 @@
     </style>
 </head>
 <body>
+
 
 <!-- Start Main Top -->
 <header class="main-header">
@@ -137,17 +137,6 @@
 </header>
 <!-- End Main Top -->
 
-<!-- Start Top Search -->
-<div class="top-search">
-    <div class="container">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-        </div>
-    </div>
-</div>
-<!-- End Top Search -->
 
 <!-- Start Top Search -->
 <div class="top-search">
@@ -164,8 +153,9 @@
 
 <main id="main">
     <div class="content">
-        <h3 class="uppercase">Đăng nhập</h3>
-        <form action="./login" method="post">
+        <h3 class="uppercase">Đăng ký</h3>
+
+        <form action="./register" method="post" >
 
             <%
                 if (error != null) {
@@ -176,21 +166,36 @@
             <%
                 }
             %>
+            <div class="mb-3">
+                <label for="username" class="form-label">Tên tài khoản</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Tên tài khoản<span
+                <label for="email" class="form-label">Email<span
                         class="required">*</span></label>
-                <input type="text" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Số điện thoại<span class="required">*</span></label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+
             <div class="mb-3">
                 <label for="password" class="form-label">Mật khẩu<span class="required">*</span></label>
-                <input type="password" class="form-control" id="password" name="pass">
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Nhập lại mật khẩu<span
+                        class="required">*</span></label>
+                <input type="password" class="form-control" id="confirm_password" name="confirmPassword">
             </div>
             <div class="option">
-                <a href="forgotpassword.html">Quên mật khẩu?</a>
-                <a href="./register.jsp">Chưa có tài khoản? Đăng ký</a>
+                <a href="./login.jsp">Đã có tài khoản? Đăng nhập</a>
             </div>
-            <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
 
         </form>
     </div>
@@ -287,48 +292,5 @@
 </footer>
 <!-- End Footer  -->
 
-<!-- ALL JS FILES -->
-<script src="./js/jquery-3.2.1.min.js"></script>
-<script src="./js/popper.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<!-- ALL PLUGINS -->
-<script src="./js/jquery.superslides.min.js"></script>
-<script src="./js/bootstrap-select.js"></script>
-<script src="./js/inewsticker.js"></script>
-<script src="./js/bootsnav.js"></script>
-<script src="./js/images-loded.min.js"></script>
-<script src="./js/isotope.min.js"></script>
-<script src="./js/owl.carousel.min.js"></script>
-<script src="./js/baguetteBox.min.js"></script>
-<script src="./js/form-validator.min.js"></script>
-<script src="./js/contact-form-script.js"></script>
-<script src="./js/custom.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#formLogin").validate({
-            rules:{
-                username: {
-                    required:true,
-                    minLength:6
-                },
-                password: {
-                    required:true,
-                    minLength:8
-                }
-            },
-            messages: {
-                username: {
-                    required: "Vui lòng nhập tên đăng nhập",
-                    minLength: "Tên đăng nhập tối thiểu 6 kí tự"
-                },
-                password: {
-                    required: "Vui lòng nhập mật khẩu",
-                    minLength: "Mật khẩu tối thiểu 8 kí tự"
-                }
-            }
-        });
-    });
-</script>
 </body>
 </html>
