@@ -79,7 +79,7 @@
                         <!--                        </ul>-->
                     </li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên hệ với chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng tôi</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
