@@ -57,13 +57,7 @@
                 <!--                    <div class="right-phone-box">-->
                 <!--                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>-->
                 <!--                    </div>-->
-                <div class="our-link">
-                    <ul>
-                        <li><a href="my-profile.html"><i class="fa fa-user s_color"></i> Tài khoản của tôi</a></li>
-                        <!--                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>-->
-                        <!--                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>-->
-                    </ul>
-                </div>
+
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
@@ -115,16 +109,17 @@
                     <li class="dropdown active">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Sản phẩm</a>
                         <ul class="dropdown-menu">
-                            <li><a href="shop.html">Sản phẩm</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="product-List">Sản phẩm</a></li>
+                            <li><a href="shop-detail.jsp">Shop Detail</a></li>
+                            <li><a href="cart.jsp">Cart</a></li>
                             <!--                            <li><a href="checkout.html">Checkout</a></li>-->
                             <!--                                <li><a href="my-account.html">My Account</a></li>-->
                             <!--                                <li><a href="wishlist.html">Wishlist</a></li>-->
                         </ul>
                     </li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên hệ với chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng
+                        tôi</a></li>
                 </ul>
 
             </div>
@@ -145,44 +140,19 @@
             <div class="login-box" style="font-weight: 700; font-size: 16px; text-transform: uppercase;">
                 <div id=" basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
                     <%if (user == null) {%>
-
                     <a href="./login.jsp">Đăng nhập</a>
                     <% } else { %>
-                    <div> <%= user.getUsername()%></div>
+                    <div><%= user.getUsername()%>
+                    </div>
                     <div style="font-weight: normal; font-size: small"><a href="logout">Đăng xuất</a></div>
                     <% } %>
                 </div>
             </div>
 
+
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-        <!--            <div class="side">-->
-        <!--                <a href="#" class="close-side"><i class="fa fa-times"></i></a>-->
-        <!--                <li class="cart-box">-->
-        <!--                    <ul class="cart-list">-->
-        <!--                        <li>-->
-        <!--                            <a href="#" class="photo"><img src="../images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>-->
-        <!--                            <h6><a href="#">Delica omtantur </a></h6>-->
-        <!--                            <p>1x - <span class="price">$80.00</span></p>-->
-        <!--                        </li>-->
-        <!--                        <li>-->
-        <!--                            <a href="#" class="photo"><img src="../images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>-->
-        <!--                            <h6><a href="#">Omnes ocurreret</a></h6>-->
-        <!--                            <p>1x - <span class="price">$60.00</span></p>-->
-        <!--                        </li>-->
-        <!--                        <li>-->
-        <!--                            <a href="#" class="photo"><img src="../images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>-->
-        <!--                            <h6><a href="#">Agam facilisis</a></h6>-->
-        <!--                            <p>1x - <span class="price">$40.00</span></p>-->
-        <!--                        </li>-->
-        <!--                        <li class="total">-->
-        <!--                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>-->
-        <!--                            <span class="float-right"><strong>Total</strong>: $180.00</span>-->
-        <!--                        </li>-->
-        <!--                    </ul>-->
-        <!--                </li>-->
-        <!--            </div>-->
         <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
@@ -202,19 +172,6 @@
 <!-- End Top Search -->
 
 <!-- Start All Title Box -->
-<!--    <div class="all-title-box">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-12">-->
-<!--                    <h2>Trang chủ</h2>-->
-<!--                    <ul class="breadcrumb">-->
-<!--                        <li class="breadcrumb-item"><a href="#"> Trang chủ </a></li>-->
-<!--                        <li class="breadcrumb-item active"> Trang chủ </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 <!-- End All Title Box -->
 
 <!-- Start Cart  -->

@@ -79,7 +79,7 @@
                         <!--                        </ul>-->
                     </li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên hệ với chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng tôi</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -187,7 +187,7 @@
                 <input type="password" class="form-control" id="password" name="password">
             </div>
             <div class="option">
-                <a href="forgotpassword.html">Quên mật khẩu?</a>
+                <a href="./template/html/forgotpassword.html">Quên mật khẩu?</a>
                 <a href="./register.jsp">Chưa có tài khoản? Đăng ký</a>
             </div>
             <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
@@ -314,7 +314,7 @@
                 },
                 password: {
                     required:true,
-                    minLength:8
+                    minLength:6
                 }
             },
             messages: {

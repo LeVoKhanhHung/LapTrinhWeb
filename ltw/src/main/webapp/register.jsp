@@ -67,7 +67,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.jsp">Trang chủ</a></li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="about.html">Về Tr</a></li>-->
                     <li>
                         <a href="#" class="nav-link " data-toggle="dropdown">Sản phẩm</a>
@@ -79,7 +79,7 @@
                         <!--                        </ul>-->
                     </li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên hệ với chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng tôi</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -258,7 +258,7 @@
                     <div class="footer-link">
                         <h4>Thông tin</h4>
                         <ul>
-                            <li><a href="contact-us.html">Về trang web chúng tôi</a></li>
+                            <li><a href="./template/html/contact-us.html">Về trang web chúng tôi</a></li>
                             <!--                                <li><a href="#">Customer Service</a></li>-->
                             <!--                                <li><a href="#">Our Sitemap</a></li>-->
                             <!--                                <li><a href="#">Terms &amp; Conditions</a></li>-->
@@ -291,6 +291,59 @@
     </div>
 </footer>
 <!-- End Footer  -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#formRegister").validate({
+            rules:{
+                username: {
+                    required:true,
+                    minlength:6
+                },
+                password: {
+                    required:true,
+                    minlength:8
+                },
+                confirmPassword: {
+                    required:true,
+                    equalTo: "#password",
+                    minlength:8
+                },
 
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required:true,
+                    number:true
+                }
+            },
+            messages: {
+
+                username: {
+                    required: "Vui lòng nhập tên đăng nhập",
+                    minlength: "Tên đăng nhập tối thiểu 6 kí tự"
+                },
+                password: {
+                    required: "Vui lòng nhập mật khẩu",
+                    minlength: "Mật khẩu tối thiểu 8 kí tự"
+                },
+                confirmPassword: {
+                    required: "Vui lòng nhập mật khẩu",
+                    minlength: "Mật khẩu tối thiểu 8 kí tự",
+                    equalTo: "Mật khẩu không trùng khớp"
+                },
+                email: {
+                    required: "Vui lòng nhập email",
+                    email: "Vui lòng nhập đúng định dạng email"
+                },
+                phone: {
+                    required: "Vui lòng nhập số điện thoại",
+                    number: "Vui lòng nhập đúng định dạng"
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

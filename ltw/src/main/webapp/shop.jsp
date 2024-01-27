@@ -4,7 +4,10 @@
 <%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--<% page contentType="text/html;charset=UTF-8"language ="java"%>--%>
-
+<%@ page import="model.User" %>
+<%
+    User user = (User) session.getAttribute("auth");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -42,6 +45,17 @@
     <script src="js/Shopfunction.js"></script>
     <![endif]-->
 
+
+    <style>
+
+
+        element.style {
+            height: 300px;
+            width: 900%;
+            display: block;
+        }
+
+    </style>
 <!--    <style>-->
 <!--        #productList {-->
 <!--            list-style-type: none;-->
@@ -88,11 +102,7 @@
                 <!--                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>-->
                 <!--                    </div>-->
                 <div class="our-link">
-                    <ul>
-                        <li><a href="my-profile.html"><i class="fa fa-user s_color"></i> Tài khoản của tôi</a></li>
-                        <!--                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>-->
-                        <!--                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>-->
-                    </ul>
+
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -121,7 +131,7 @@
 </div>
 <!-- End Main Top -->
 
-<!-- Start Main Top -->
+
 <header class="main-header">
     <!-- Start Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
@@ -132,36 +142,38 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" class="logo" alt=""></a>
             </div>
             <!-- End Header Navigation -->
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.jsp">Trang chủ</a></li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="about.html">Về Tr</a></li>-->
                     <li class="dropdown active">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Sản phẩm</a>
                         <ul class="dropdown-menu">
-                            <li><a href="shop.html">Sản phẩm</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a></li>
+                            <li><a href="shop.jsp">Sản phẩm</a></li>
+                            <li><a href="shop-detail.jsp">Shop Detail</a></li>
                             <li><a href="cart.jsp">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
+                            <!--                            <li><a href="checkout.html">Checkout</a></li>-->
                             <!--                                <li><a href="my-account.html">My Account</a></li>-->
                             <!--                                <li><a href="wishlist.html">Wishlist</a></li>-->
                         </ul>
                     </li>
                     <!--                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>-->
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên hệ với chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./template/html/contact-us.html">Liên hệ với chúng tôi</a></li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
 
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
                 <% Cart cart = (Cart) session.getAttribute("cart");
-                if (cart ==null) cart=new Cart();
+                    if (cart ==null) cart=new Cart();
                 %>
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
@@ -172,47 +184,26 @@
                     </a></li>
                 </ul>
             </div>
+            <%--            login--%>
             <div class="login-box" style="font-weight: 700; font-size: 16px; text-transform: uppercase;">
                 <div id=" basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                    <a href="login.html">Đăng nhập</a><i class="fa-solid fa-right-to-bracket"></i>
+                    <%if (user == null) {%>
+
+                    <a href="./login.jsp">Đăng nhập</a>
+                    <% } else { %>
+                    <div> <%= user.getUsername()%></div>
+                    <div style="font-weight: normal; font-size: small"><a href="logout">Đăng xuất</a></div>
+                    <% } %>
                 </div>
             </div>
 
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
-        <!--            <div class="side">-->
-        <!--                <a href="#" class="close-side"><i class="fa fa-times"></i></a>-->
-        <!--                <li class="cart-box">-->
-        <!--                    <ul class="cart-list">-->
-        <!--                        <li>-->
-        <!--                            <a href="#" class="photo"><img src="../images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>-->
-        <!--                            <h6><a href="#">Delica omtantur </a></h6>-->
-        <!--                            <p>1x - <span class="price">$80.00</span></p>-->
-        <!--                        </li>-->
-        <!--                        <li>-->
-        <!--                            <a href="#" class="photo"><img src="../images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>-->
-        <!--                            <h6><a href="#">Omnes ocurreret</a></h6>-->
-        <!--                            <p>1x - <span class="price">$60.00</span></p>-->
-        <!--                        </li>-->
-        <!--                        <li>-->
-        <!--                            <a href="#" class="photo"><img src="../images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>-->
-        <!--                            <h6><a href="#">Agam facilisis</a></h6>-->
-        <!--                            <p>1x - <span class="price">$40.00</span></p>-->
-        <!--                        </li>-->
-        <!--                        <li class="total">-->
-        <!--                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>-->
-        <!--                            <span class="float-right"><strong>Total</strong>: $180.00</span>-->
-        <!--                        </li>-->
-        <!--                    </ul>-->
-        <!--                </li>-->
-        <!--            </div>-->
         <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
 </header>
-<!-- End Main Top -->
-
 <!-- Start Top Search -->
 <div class="top-search">
     <div class="container">
@@ -289,11 +280,11 @@
 <%--                                        for (Product p:data){--%>
 <%--                                        %>--%>
 
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" style="    display: -webkit-inline-box;">
                                             <% List<Product> data = (List<Product>)  request.getAttribute("data");
                                                 for (Product p:data){
                                             %>
-                                            <div class="products-single fix" >
+                                            <div class="products-single fix" style="    padding: 13px">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
                                                         <p class="sale">Giảm giá</p>
