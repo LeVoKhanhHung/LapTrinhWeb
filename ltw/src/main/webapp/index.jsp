@@ -146,7 +146,7 @@
                 <div id=" basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
                     <%if (user == null) {%>
 
-                    <a href="login.jsp">Đăng nhập</a>
+                    <a href="./login.jsp">Đăng nhập</a>
                     <% } else { %>
                     <div> <%= user.getUsername()%></div>
                     <div><a href="logout">Đăng xuất</a></div>

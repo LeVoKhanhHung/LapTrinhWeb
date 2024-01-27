@@ -19,15 +19,26 @@ public class LoginController extends HttpServlet {
         doPost(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email") == null ? "" : request.getParameter("email");
-        String pass = request.getParameter("pass") == null ? "" : request.getParameter("pass");
-        User u = UserService.getInstance().checkLogin(email, pass);
-        if (u!=null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("auth",u);
-            response.sendRedirect("./");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        User user = UserService.getInstance().checkLogin(username, password);
+
+        if (user != null && user.getId() > 0 && user.getActive() > 0) {
+            HttpSession session = req.getSession();
+            session.setAttribute("user", user);
+
+            resp.sendRedirect("./");
+        } else {
+            String error = "Thông tin đăng nhập không chính xác";
+            if (user != null && user.getId() == 0) {
+                error = "Tài khoản của bạn đã bị khóa";
+            }
+            if (user != null && user.getActive() == 0) {
+                error = "Vui lòng kích hoạt tài khoản trong email của bạn";
+            }
+            req.setAttribute("error", error);
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
         }
     }
 }
